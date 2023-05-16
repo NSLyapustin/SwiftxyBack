@@ -1,4 +1,4 @@
-package com.example.swiftxyback.model;
+package com.example.swiftxyback.dto;
 
 import lombok.Builder;
 import lombok.Data;
