@@ -8,7 +8,8 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 
-@SpringBootApplication(exclude = {DataSourceAutoConfiguration.class })
+@SpringBootApplication(scanBasePackages={
+        "com.example.swiftxyback"})
 @EntityScan("com.example.swiftxyback.model")
 public class SwiftxyBackApplication {
     public static void main(String[] args) {

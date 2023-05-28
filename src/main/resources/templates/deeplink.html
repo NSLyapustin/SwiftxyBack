@@ -1,8 +1,15 @@
 <!DOCTYPE html>
 <html>
 <head><title>DeepLink</title></head>
+<style>
+    .add-link::after {
+        content: attr(href);
+    }
+</style>
 <body>
 <h1>Deeplink</h1>
 <a th:href="${scheme} + '://' + ${deeplink}">Deeplink</a>
+<p>Sharing link: </p>
+<a class="add-link" th:href="'http://localhost:8080/deeplink/' + ${sharingUuid}"></a>
 </body>
 </html>
