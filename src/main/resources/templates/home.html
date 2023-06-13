@@ -1,9 +1,12 @@
-<html>
-<head><title>Home Page</title></head>
+<html xmlns="http://www.w3.org/1999/html">
+<head>
+    <title>Home Page</title>
+    <link rel="stylesheet" href="home.css">
+</head>
 <body>
 <h1>Swiftxy</h1>
 <form action="/deeplink" method="post">
-    <label for="scheme">Схема приложения:</label><br>
+    <label for="scheme">App scheme:</label><br>
     <input type="text" id="scheme" name="scheme" style="width:400px"><br>
     <br>
     <label for="templateName">Template name:</label><br>
@@ -13,42 +16,19 @@
     <input type="text" id="template" name="template" style="width:400px"><br>
     <br>
     <label for="requestBody">Request body:</label><br>
-    <textarea type="text" id="requestBody" name="requestBody" style="height:200px;width:400px"></textarea><br>
+    <textarea type="text" id="requestBody" name="requestBody" th:text="${generatedReqBody}" style="height:200px;width:400px"></textarea><br>
     <br>
     <label for="responseBody">Response body:</label><br>
-    <textarea type="text" id="responseBody" name="responseBody" style="height:200px;width:400px"></textarea>
+    <textarea type="text" id="responseBody" name="responseBody" th:text="${generatedRespBody}" style="height:200px;width:400px"></textarea>
     <br>
     <input type="submit" value="Создать DeepLink"/>
 </form>
-<button>Сгенерировать значения</button>
+<form action="/gen_req_body" method="post">
+    <label for="requestBodyGen">Request body template:</label><br>
+    <textarea type="text" id="requestBodyGen" name="requestBodyGen" style="height:200px;width:400px"></textarea><br>
+    <label for="responseBodyGen">Response body template:</label><br>
+    <textarea type="text" id="responseBodyGen" name="responseBodyGen" style="height:200px;width:400px"></textarea><br>
+    <input type="submit" value="Сгенерировать данные"/>
+</form>
 </body>
-
-<script>
-    function loadString() {
-        console.log("AdelyaPrivet");
-        var input = {
-            "scheme": "hello1",
-            "templateName": "hello2",
-            "template": "hello3",
-            "requestBody": "hello4",
-            "responseBody": "hello5"
-        };
-        var xhttp = new XMLHttpRequest();
-        xhttp.onreadystatechange = function() {
-            if (this.readyState === 4 && this.status === 200) {
-                console.log(this.responseText);
-                console.log(this.responseText);
-                console.log(this.responseText);
-                console.log(this.responseText);
-                console.log(this.responseText);
-                console.log(this.responseText);
-                console.log(this.responseText);
-            }
-        };
-        xhttp.open("POST", "http://www.localhost:8080/data", true);
-        xhttp.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
-        xhttp.send(JSON.stringify(input));
-    }
-</script>
-
 </html>

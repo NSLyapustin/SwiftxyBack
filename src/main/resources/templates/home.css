@@ -1,0 +1,13 @@
+body {
+    background-color: lightcyan;
+}
+
+@font-face {
+    font-family: OpenSans;
+    src(/fo);
+}
+
+h1 {
+    font-family: OpenSans, fantasy;
+    color: pink;
+}

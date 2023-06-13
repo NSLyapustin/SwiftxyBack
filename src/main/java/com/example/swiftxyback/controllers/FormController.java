@@ -1,6 +1,7 @@
 package com.example.swiftxyback.controllers;
 
 import com.example.swiftxyback.dto.DeepLinkInputDto;
+import com.example.swiftxyback.dto.GenTemplateDto;
 import com.example.swiftxyback.model.DeepLink;
 import com.example.swiftxyback.repositories.DeeplinkRepository;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -8,8 +9,10 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
+import java.io.IOException;
 import java.util.UUID;
 
 @Controller
@@ -59,5 +62,12 @@ public class FormController {
         model.addAttribute("scheme", deepLink.getScheme());
         model.addAttribute("deeplink", deepLink.getContent());
         return "deeplink";
+    }
+
+    @PostMapping("/gen_req_body")
+    public String genReqBody(Model model, GenTemplateDto genTemplateDto) throws IOException {
+        model.addAttribute("generatedReqBody", Generator.generate(genTemplateDto.getRequestBodyGen()));
+        model.addAttribute("generatedRespBody", Generator.generate(genTemplateDto.getResponseBodyGen()));
+        return "home";
     }
 }
