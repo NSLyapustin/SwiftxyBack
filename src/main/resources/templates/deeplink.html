@@ -1,15 +1,20 @@
-<!DOCTYPE html>
-<html>
-<head><title>DeepLink</title></head>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Deeplink</title>
+    <link rel="stylesheet" type="text/css" th:href="@{/assets/css/deeplink.css}" />
+</head>
 <style>
     .add-link::after {
         content: attr(href);
     }
 </style>
 <body>
-<h1>Deeplink</h1>
-<a th:href="${scheme} + '://' + ${deeplink}">Deeplink</a>
-<p>Sharing link: </p>
-<a class="add-link" th:href="'http://localhost:8080/deeplink/' + ${sharingUuid}"></a>
+<h1 style="display:flex; flex-direction: row; justify-content: center; align-items: center"> Generated Deeplink</h1>
+<a style="display:flex; flex-direction: row; justify-content: center; align-items: center" th:href="${scheme} + '://' + ${deeplink}">Deeplink</a>
+<div style="display:flex; flex-direction: row; justify-content: center; align-items: center">
+    <p>Sharing link: </p>
+    <a class="add-link" th:href="'http://localhost:8080/deeplink/' + ${sharingUuid}"></a>
+</div>
 </body>
 </html>
