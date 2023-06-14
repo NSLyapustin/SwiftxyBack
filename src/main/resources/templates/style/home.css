@@ -1,0 +1,35 @@
+body {
+    background-color: lightcyan;
+}
+
+@font-face {
+    font-family: Open Sans Condensed Bold;
+    src: url(/fonts/OpenSans-Bold.ttf);
+}
+
+@font-face {
+    font-family: Open Sans Regular;
+    src: url(/fonts/OpenSans-Regular.ttf);
+}
+
+h1 {
+    font-family: sans-serif;
+}
+
+label {
+    font-family: sans-serif;
+}
+
+.submit-button {
+    padding: 12px 40px;
+    border-radius: 8px;
+    box-shadow: 2px 2px 2px 1px rgb(131, 131, 219) ;
+    border: 1px solid gray;
+    font-size: 20px;
+}
+
+.submit-button:hover{
+    background-color: cadetblue;
+    color: rgb(246, 244, 248);
+}
+
