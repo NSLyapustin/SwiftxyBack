@@ -8,7 +8,10 @@ public class Generator {
         processBuilder.redirectErrorStream(true);
 
         Process process = processBuilder.start();
-        String result = new String(process.getInputStream().readAllBytes());
+        String result = new String(process.getInputStream().readAllBytes())
+                .replaceAll("'", "\"")
+                .replaceAll("True", "true")
+                .replaceAll("False", "false");
         return result.startsWith("Traceback") ? "" : result;
     }
 }
