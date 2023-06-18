@@ -9,29 +9,29 @@
 <div style="display:flex; flex-direction: row; justify-content: center; align-items: center; gap: 50px">
     <form action="/deeplink" method="post">
         <label for="scheme">App scheme:</label><br>
-        <input type="text" id="scheme" name="scheme" style="width:400px;font-size: 22px"><br>
+        <input type="text" id="scheme" name="scheme" style="width:400px;font-size: 16px"><br>
         <br>
         <label for="templateName">Template name:</label><br>
-        <input type="text" id="templateName" name="templateName" style="width:400px;font-size: 22px"><br>
+        <input type="text" id="templateName" name="templateName" style="width:400px;font-size: 16px"><br>
         <br>
         <label for="template">Template definition:</label><br>
-        <input type="text" id="template" name="template" style="width:400px;font-size: 22px"><br>
+        <input type="text" id="template" name="template" style="width:400px;font-size: 16px"><br>
         <br>
         <label for="requestBody">Request body:</label><br>
-        <textarea type="text" id="requestBody" name="requestBody" th:text="${generatedReqBody}" style="height:200px;width:400px;font-size: 22px"></textarea><br>
+        <textarea type="text" id="requestBody" name="requestBody" th:text="${generatedReqBody}" style="height:200px;width:400px;font-size: 16px"></textarea><br>
         <br>
         <label for="responseBody">Response body:</label><br>
-        <textarea type="text" id="responseBody" name="responseBody" th:text="${generatedRespBody}" style="height:200px;width:400px;font-size: 22px"></textarea>
+        <textarea type="text" id="responseBody" name="responseBody" th:text="${generatedRespBody}" style="height:200px;width:400px;font-size: 16px"></textarea>
         <br>
         <br>
         <input class="submit-button" type="submit" value="Generate DeepLink"/>
     </form>
     <form action="/gen_req_body" method="post">
         <label for="requestBodyGen">Request body template:</label><br>
-        <textarea type="text" id="requestBodyGen" name="requestBodyGen" style="height:200px;width:400px;font-size: 22px"></textarea><br>
+        <textarea type="text" id="requestBodyGen" name="requestBodyGen" style="height:200px;width:400px;font-size: 16px"></textarea><br>
         <br>
         <label for="responseBodyGen">Response body template:</label><br>
-        <textarea type="text" id="responseBodyGen" name="responseBodyGen" style="height:200px;width:400px;font-size: 22px"></textarea><br>
+        <textarea type="text" id="responseBodyGen" name="responseBodyGen" style="height:200px;width:400px;font-size: 16px"></textarea><br>
         <br>
         <input class="submit-button" type="submit" value="Generate data"/>
     </form>

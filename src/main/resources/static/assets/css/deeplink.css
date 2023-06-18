@@ -9,3 +9,7 @@ h1 {
 label {
     font-family: sans-serif;
 }
+
+a, p {
+    font-size: 28px;
+}
